@@ -1,0 +1,204 @@
+\documentclass[aspectratio=169,mathserif,notheorems]{beamer}%
+%
+\xdef\sharedDir{../../shared}%
+\RequirePackage{\sharedDir/styles/slides}%
+%
+\subtitle{Introduction}%
+%
+\begin{document}%
+%
+\startPresentation%
+%
+\section{Introduction}%
+%
+\begin{frame}%
+\frametitle{Introduction}%
+\begin{itemize}%
+\item This course aims to teach you programming using the programming language Python.%
+\item<2-> What does \emph{programming} mean?%
+\item<3-> Programming means that we delegate a task to the computer.%
+\item<4-> We have this job to do, this thing.%
+\item<5-> Maybe it is too complicated and time consuming to do.%
+\item<6-> Maybe it is something that we have to do very often.%
+\item<7-> Maybe it is something that we cannot, physically, do.%
+\item<8-> Maybe we are just lazy.%
+\item<9-> So we want that the computer does it for us.%
+\end{itemize}%
+\end{frame}%
+%
+\begin{frame}%
+\frametitle{Introduction}%
+\begin{itemize}%
+\item Whenever we delegate a task to another person, we need to explain it.%
+\item<2-> If you are a chef in a kitchen, you have to tell the junior trainee chef: \inQuotes{First you wash the potatoes, then peel the potato skin, then you wash the potatoes again, and then you cook them.}%
+\item<3-> If you are visiting the hairdresser to get your hair done, you would say something like:
+\inQuotes{Wash my hair, then cut it down to 1cm on the top, trim the sides, then color it green.}
+\item<4-> You provide the other person with a clear and unambiguous sequence of instructions in a language they can understand.%
+\item<5-> In this book, you will learn to do the same --- with computers.%
+\end{itemize}%
+\end{frame}%
+%
+%
+\section{Programming vs.\ Software Development}%
+%
+\begin{frame}%
+\frametitle{Programming}%
+%
+\begin{definition}[Computer Program]%
+A \emph{computer program} is an unambiguous sequence of computational instructions for a computer to achieve a specific goal.%
+\end{definition}%
+%
+\begin{definition}[Programming]%
+\label{def:programming}
+\emph{Programming} is the activity or job of writing computer programs\cite{CDE2024PMOPIE}.%
+\end{definition}%
+%
+\end{frame}%
+%
+
+\begin{frame}%
+\frametitle{Programming}%
+\begin{itemize}%
+\item In the vast majority of situations, we do not create a program to just use it one single time.%
+\item<2-> This is similar to the real life situation of work delegation again.
+\item<3-> If you were a chef, you basically \inQuotes{input} the \inQuotes{program} \emph{cook potatoes} into the junior trainee once.
+\item<4-> In the future, you would like to be able go to them and invoke this program again by saying:~\inQuotes{Please cook 2kg of potatoes.}
+\item<5-> Our \inQuotes{programs} often even have implicit parameters, like the quantity of~2kg mentioned above.
+\item<6-> Maybe you go to the hairdresser again and want to say: \inQuotes{Same as usual, but today color it blue.}%
+\end{itemize}%
+\end{frame}%
+%
+
+\begin{frame}%
+\frametitle{Programming}%
+\begin{itemize}%
+\item In our day-to-day interactions, creating reusable and parameterized programs happens very often and very implicitly.%
+\item<2-> We usually do not think about this in any explicit terms.%
+\item<3-> But when we program computers, we do think about this explicitly.% 
+\item<4-> Right from the start.%
+\item<5-> Therefore \alert{programming is only one part of software development}.
+\end{itemize}%
+\end{frame}%
+%
+\begin{frame}%
+\frametitle{Developing Software}%
+\begin{itemize}%
+\item Later in your job, you want to develop a program that can be used to solve a specific task.%
+\uncover<2->{%
+\begin{enumerate}%
+\item You write the program.%
+\item<3-> You now have the file with the program code.%
+\item<4-> The problem is solved.%
+\end{enumerate}%
+}%
+\item<5-> Is it that easy?\uncover<6->{ \alert<6>{No.}%
+\uncover<7->{%
+\begin{enumerate}%
+\item You may wonder whether you made any mistake.\uncover<8->{ People make mistakes.\uncover<9->{ The more complex the task we tackle, the more (program code) we write, the more likely it is that we make some small error somewhere.\uncover<10->{ \alert<10>{You must test your program.}}}}%
+\item<11-> What if someone else is going to use your program later?\uncover<12->{ \alert<12>{You need to write clear documentation.}}%
+\item<13-> What if your program or packages provides functions that others can use?\uncover<14->{ \alert<14>{The input and output datatypes must be clearly specified.}}%
+\item<15-> What if someone else is supposed to read your code and work with it?\uncover<16->{ \alert<16>{Your code must be readable, clear, and follow common coding styles\cite{PEP8}.}}%
+\end{enumerate}%
+}}%
+\item<17-> All of these things must be considered!%
+\end{itemize}%
+\end{frame}%
+%
+%
+\begin{frame}%
+\frametitle{Developing Software}%
+\begin{itemize}%
+\item Developing software is more than writing programs.%
+\item<2-> Most jobs are more than just the associated \inQuotes{main work}\uncover<3->{%
+\begin{itemize}%
+\item Let's say that you need to go to a doctor to undergo some procedure.%
+\item<4-> You hope that they have been trained well in doing operations.%
+\item<5-> But you simply expect that they were also trained to wash their hands before surgery.%
+\end{itemize}%
+}%
+\item<6-> It is the same for programmers!\uncover<7->{%
+\begin{itemize}%
+\item Let's say that your boss asks you to write a program.%
+\item<8-> They hope that you can write a program that \inQuotes{works.}%
+\item<9-> But they expect that the code that you produced is readable, was tested, and is documented.%
+\end{itemize}%
+}%
+\item<10-> I do not want to go to a surgeon who does not wash their hands before operating on me.%
+\item<11-> And I will not teach you programming without emphasizing code cleanliness.%
+\end{itemize}%
+\end{frame}%
+%
+%
+\begin{frame}%
+\frametitle{Developing Software}%
+%
+\begin{itemize}%
+\item Programmers don't just write programs, they \emph{develop software}.%
+\item<2-> A good share of programmers usually spend only about 50\%~of their time with programming\cite{T2019MOSWBFDHOT2TMOSS,AS2019DS2OSRP}.%
+\item<3-> Other studies even suggest that less than 20\%~of the working time spent with coding, maybe with another 15\%~of bug fixing\cite{MAGTOC2024EHFAP}.%
+%
+\item<4-> Of course, we will focus on programming in this class on, well, programming.%
+%
+\item<5-> But we will at discuss several issues beyond that, things that belong into your tool belt, that can make you a \emph{good} programmer.%
+%
+\item<6-> Our course is on developing good software with \python.%
+\end{itemize}%
+\end{frame}%
+%
+%
+\section{Why \python?}%
+%
+\begin{frame}[t]%
+\frametitle{Why \python?}%
+\begin{enumerate}%
+\item Because \python\ is a very widely-used programming language\cite{CBST2024LOHPPTDDSAMLA,B2023G2GLS}.%
+\item<3-> \python\ is intensely used in AI\cite{RN2022AIAMA}, ML\cite{SSBD2014UMLFTTA}, and Data Science\cite{G2019DSFSFPWP} as well as optimization, which are among the most important areas of future technology.%
+\item<4-> There exists a very large set of powerful libraries supporting both research and application development in these fields, including \numpy\cite{HMvdWGVCWTBSKPHvKBHFdRWPGMSRWAGO2020APWN,DBvR2024ITN,J2018NPSCADSAWNSAM}, \pandas\cite{B2012DPWP,L2024PW}, \scikitlearn\cite{PVGMTGBPWDVPCBPD2011SMLIP,RLM2022MLWPAS}, \scipy\cite{VGOHRCBPWBvdWBWMMNJKLCPFMVLPCHQHARPvMS2020SFAFSCIP,J2018NPSCADSAWNSAM}, \tensorflow\cite{ABCCDDDGIIKLMMMSTVWWYZ2016TASFLSML,L2023TDDBTADMLMWT}, \pytorch\cite{PGMLBCKLGADKYDRTCSFBC2019PAISHPDLL,RLM2022MLWPAS}, \matplotlib\cite{H2007MA2GE,P2021HOMLPAVWP,J2018NPSCADSAWNSAM}, \simpy\cite{Z2024DESIEWS}, and \moptipy\cite{WW2023RSDEWASSAA}, just to name a few.%
+%
+\item<5-> \python\ is very easy to learn\cite{GPBS2006WCTIPIHSUP,VR1999CPFERPASEFTPOT}. %
+It has a simple and clean syntax and enforces a readable structure of programs. %
+\python\ has expressive built-in types likes lists, tuples, and dictionaries. %
+\end{enumerate}%
+%
+\locateGraphic[B2023G2GLS]{2}{width=0.65\paperwidth}{graphics/languagesByGithubPushes/languagesByGithubPushes}{0.175}{0.26}%
+\end{frame}%
+%
+%
+\begin{frame}[t]%
+\frametitle{\python\ is an interpreted language}%
+\begin{itemize}%
+\item Most programming languages require code to be compiled.%
+\item<8-> \python\ is interpreted.%
+\item<12-> So there are fewer steps in the build process.%
+\end{itemize}%
+\locateGraphic{2}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_01}{0.125}{0.35}%
+\locateGraphic{3}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_02}{0.125}{0.35}%
+\locateGraphic{4}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_03}{0.125}{0.35}%
+\locateGraphic{5}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_04}{0.125}{0.35}%
+\locateGraphic{6}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_05}{0.125}{0.35}%
+\locateGraphic{7}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_06}{0.125}{0.35}%
+\locateGraphic{8}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_07}{0.125}{0.35}%
+\locateGraphic{9}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_08}{0.125}{0.35}%
+\locateGraphic{10}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_09}{0.125}{0.35}%
+\locateGraphic{11-}{width=0.75\paperwidth}{graphics/pythonIsInterpreted/pythonIsInterpreted_10}{0.125}{0.35}%
+\end{frame}%
+%
+\section{Summary}%
+%
+\begin{frame}\frametitle{Summary}%
+%
+\begin{itemize}%
+\item Programming means to write the source code of computer programs.%
+\item<2-> We can use a programming language like \python\ for that.%
+\item<3-> To be able to create good, useful, and maintainable programs, it is not enough to just learn a programming language.%
+\item<4-> You also have to understand the tools surrounding it, the best practices, the coding guidelines, how to test programs, how to document programs, and so on.%
+\item<5-> You need a good understanding of the most important components of \emph{software development}.
+\item<6-> I will try to teach you programming together with several of such aspects.%
+\item<7-> We will use the \python\ programming language\uncover<8->{, because it is easy to learn\uncover<9->{, widely used\uncover<10->{, has a rich environment of useful packages\uncover<11->{, and has a simple build process.}}}}%
+\end{itemize}%
+\end{frame}%
+%
+\endPresentation%
+\end{document}%%
+\endinput%
+%

@@ -1,0 +1,18 @@
+%%
+%% Shortcuts for printing the the itemization/enumeration starts somewhere in a text.s
+%
+%%
+%% print an itemization item inline
+\gdef\itemizeItem{%
+\begingroup\usebeamertemplate{itemize item}\endgroup%%
+}%
+%
+%% print an enumeration item inline
+\gdef\enumerateItem#1{%
+\if\relax\detokenize{#1}\relax%
+\stepcounter{enumi}%
+\else%
+\expandafter\setcounter\expandafter{enumi}{#1}%
+\fi%
+\begingroup\usebeamertemplate{enumerate item}\endgroup%%
+}%

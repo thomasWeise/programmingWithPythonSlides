@@ -1,0 +1,21 @@
+%%%
+%%%
+%%% Load CJKutf8 to be able to print Chinese characters
+%%% Provide command \zh to enable us to write Chinese characters
+%%%
+%
+%
+%
+\RequirePackage[utf8]{inputenc}%
+%
+%% We will define two commands:
+%% \zh{xxxx} is used to render Chinese text
+%% \zhb{xxxx} renders Chinese text in a box, preventing strange linebreaks
+%%
+%
+\let\internalBegin\begin%
+\let\internalEnd\end%
+\RequirePackage{CJKutf8}%
+\protected\gdef\zh#1{\internalBegin{CJK}{UTF8}{gkai}#1\internalEnd{CJK}}%
+\protected\gdef\zhb#1{\mbox{\zh{#1}}}%
+%

@@ -1,0 +1,89 @@
+%
+\RequirePackage{adjustbox}%
+%
+%%
+%%%% Locate something like listings.
+%% #1 the visibility
+%% #2 the stuff to locate
+%% #3 the location x
+%% #4 the location y
+%% #5 the goal width
+%% #6 the goal height
+\protected\gdef\locateListingBox#1#2#3#4#5#6{%
+\locate{#1}{%
+\maxsizebox*{#5\paperwidth}{#6\paperheight}{%
+\minsizebox*{#5\paperwidth}{#6\paperheight}{%
+\parbox[t]{\paperwidth}{#2}%
+}}%
+}{#3}{#4}%
+}%
+%
+%
+%% Use latexgit to place a listing.
+%% #1 the visibility
+%% #2 the parameters to be passed to the listing
+%% #3 the git repository
+%% #4 the local path
+%% #5 the post-processing
+%% #6 the location x
+%% #7 the location y
+%% #8 the goal width
+%% #9 the goal height
+\protected\gdef\gitCode#1#2#3#4#5#6#7#8#9{%
+\gitLoad{#3}{#4}{#5}%
+\locateListingBox{#1}{\lstinputlisting[#2]{\gitFile}}{#6}{#7}{#8}{#9}%
+}%
+%
+%% Use latexgit to place an output listing.
+%% #1 the visibility
+%% #2 the parameters to be passed to the listing
+%% #3 the git repository
+%% #4 the local path
+%% #5 the command
+%% #6 the location x
+%% #7 the location y
+%% #8 the goal width
+%% #9 the goal height
+\protected\gdef\gitOutput#1#2#3#4#5#6#7#8#9{%
+\gitExec{#3}{#4}{#5}%
+\locateListingBox{#1}{\lstinputlisting[#2]{\gitFile}}{#6}{#7}{#8}{#9}%
+}%
+%
+%% Use latexgit to place a Python listing.
+%% #1 the visibility
+%% #2 the git repository
+%% #3 the local path
+%% #4 the post-processing
+%% #5 the location x
+%% #6 the location y
+%% #7 the goal width
+%% #8 the goal height
+\protected\gdef\gitPython#1#2#3#4#5#6#7#8{%
+\gitCode{#1}{style=python_style}{#2}{#3}{python3 -m latexgit.formatters.python #4}{#5}{#6}{#7}{#8}%
+}%
+%
+%
+%% Use latexgit to place a listing and its output.
+%% #1 the visibility
+%% #2 the git repository
+%% #3 the directory
+%% #4 the local path
+%% #5 the formatting arguments
+%% #6 the location x
+%% #7 the location y
+%% #8 the goal width
+%% #9 the goal height
+\protected\gdef\gitPythonAndOutput#1#2#3#4#5#6#7#8#9{%
+\gitLoad{#2}{#3/#4}{python3 -m latexgit.formatters.python #5}%
+\edef\@git@python@out@src{\gitFile}%
+\gitExec{#2}{#3}{python3 #4}%
+\edef\@git@python@out@exc{\gitFile}%
+%
+\locateListingBox{#1}{
+\centering%
+\lstinputlisting[style=python_style]{\@git@python@out@src}%
+$\downarrow$~~\expandafter\bashil{python3 #3.py}~~$\downarrow$%
+\lstinputlisting[style=text_style]{\@git@python@out@exc}%
+}{#6}{#7}{#8}{#9}%
+}%
+%
