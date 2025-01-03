@@ -24,7 +24,7 @@ The book itself can be downloaded as pdf at <https://thomasweise.github.io/progr
 The slides for the course are available at <https://thomasweise.github.io/programmingWithPythonSlides> and also listed below.
 
 1. [Introduction](https://thomasweise.github.io/programmingWithPythonSlides/01_introduction.pdf)
-2. [Getting Started](https://thomasweise.github.io/programmingWithPythonSlides/02_getting_started)
+2. [Getting Started](https://thomasweise.github.io/programmingWithPythonSlides/02_getting_started.pdf)
 
 ### 2.3. The Example Python Programs 
 Our course offers a lot of examples.
