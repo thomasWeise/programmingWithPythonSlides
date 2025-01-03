@@ -1,0 +1,25 @@
+name: publish
+
+on:
+  push:    
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/texlive-action@d9f893f837a29f066e3c70080540976b47263721
+        with:
+          scheme: full
+          run: |
+            apk add cargo gcc linux-headers musl-dev py3-pip python3 python3-dev rust
+            ./make.sh
+# deploy to github pages
+      - name: deploy documentation
+        uses: JamesIves/github-pages-deploy-action@94f3c658273cf92fb48ef99e5fbc02bd2dc642b2
+        with:
+          branch: gh-pages
+          folder: /home/runner/work/programmingWithPythonSlides/programmingWithPythonSlides/website/
+          single-commit: true
