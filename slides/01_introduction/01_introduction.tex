@@ -1,7 +1,9 @@
 \documentclass[aspectratio=169,mathserif,notheorems]{beamer}%
 %
+\xdef\bookbaseDir{../../bookbase}%
 \xdef\sharedDir{../../shared}%
-\RequirePackage{\sharedDir/styles/slides}%
+\RequirePackage{\bookbaseDir/styles/slides}%
+\RequirePackage{\sharedDir/styles/styles}%
 %
 \subtitle{Introduction}%
 %
@@ -74,7 +76,7 @@ A \emph{computer program} is an unambiguous sequence of computational instructio
 \begin{itemize}%
 \item In our day-to-day interactions, creating reusable and parameterized programs happens very often and very implicitly.%
 \item<2-> We usually do not think about this in any explicit terms.%
-\item<3-> But when we program computers, we do think about this explicitly.% 
+\item<3-> But when we program computers, we do think about this explicitly.%
 \item<4-> Right from the start.%
 \item<5-> Therefore \alert{programming is only one part of software development}.
 \end{itemize}%

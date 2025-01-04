@@ -1,0 +1,26 @@
+%%
+%% Render the intro slides
+\protected\gdef\introSlide{%
+%
+\begin{frame}[t]%
+\frametitle{Programming with \python}%
+\locate{}{%
+\parbox{\paperwidth}{%
+\vspace{0.035\paperheight}%
+\strut\hfill\strut%
+\includegraphics[width=0.085\paperwidth]{\bookbaseDir/graphics/logos/hfuu_logo_round}%
+\strut\hspace{0.05\paperwidth}\strut%
+}}{0}{0}%
+\locateGraphic{}{width=0.2\paperwidth}{\sharedDir/graphics/qr/courseUrl}{0.775}{0.61}%
+%
+\locate{}{%
+\parbox{0.85\paperwidth}{%
+This is a course on programming with the \python\ language at Hefei University~(\zhb{合肥大学}).\\[9pt]%
+%
+The website with the teaching material of this course is \expandafter\href{\programmingWithPythonUrl}{\programmingWithPythonUrl} (see also the QR\nobreakdashes-code at the bottom right).
+There, you can find the course book and these slides.
+The repository with the example \python\ programs can be found at~\expandafter\href{\programmingWithPythonCodeRepo}{\programmingWithPythonCodeRepo}.%
+}}{0.06}{0.225}%
+\end{frame}%
+}%
+%
